@@ -322,7 +322,7 @@ export default function EnrollmentsPage() {
                       value={course.courseCode}
                     >
                       {course.courseCode} -{" "}
-                      {course.courseName || (course as any).courseTitle}
+                      {course.courseTitle || (course as any).courseTitle}
                     </SelectItem>
                   ))}
                 </SelectContent>
