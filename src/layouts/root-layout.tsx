@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 
+import { STUDENT_ID } from "@/lib/enrollment-store";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
@@ -8,6 +9,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Footer } from "@/components/footer";
 
 export default function RootLayout() {
   return (
@@ -18,14 +20,17 @@ export default function RootLayout() {
           <div className="flex items-center gap-2">
             <SidebarTrigger />
             <Separator orientation="vertical" className="h-4" />
-            <span className="text-sm font-medium">ระบบลงทะเบียนเรียน</span>
+            <span className="text-sm font-medium">
+              จัดการวิชาเรียนและสถานะนักศึกษา
+            </span>
           </div>
           <ModeToggle />
         </header>
+
         <main className="flex-1 p-4">
           <Outlet />
         </main>
-        <footer className="border-t p-4 text-center text-xs text-muted-foreground"></footer>
+        <Footer firstName="ณัฏฐชัย" lastName="สุระธง" studentId={STUDENT_ID} />
       </SidebarInset>
     </SidebarProvider>
   );
